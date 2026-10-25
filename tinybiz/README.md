@@ -25,16 +25,11 @@ cd backend
 npm install
 ```
 
-Apply PostgreSQL database migrations and demo seed data:
+Apply PostgreSQL database migrations and demo seed data automatically via Node:
 ```bash
-psql -U postgres -d tinybiz -f db/migrations/001_create_merchants.sql
-psql -U postgres -d tinybiz -f db/migrations/002_create_products.sql
-psql -U postgres -d tinybiz -f db/migrations/003_create_events.sql
-psql -U postgres -d tinybiz -f db/migrations/004_create_offers.sql
-psql -U postgres -d tinybiz -f db/migrations/005_create_repayments.sql
-psql -U postgres -d tinybiz -f db/migrations/006_create_sync_logs.sql
-psql -U postgres -d tinybiz -f db/seeds/demo_seed.sql
+npm run db:migrate
 ```
+*(Or via psql if running locally: `psql -U postgres -d tinybiz -f db/migrations/001_create_merchants.sql ...`)*
 
 Start the Express API server:
 ```bash
